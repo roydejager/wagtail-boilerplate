@@ -8,8 +8,6 @@ from wagtail.wagtailcore import blocks
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 
-import time
-
 class Page(Page):
     body = StreamField([
         ('heading', blocks.CharBlock(classname="full title")),
@@ -17,6 +15,6 @@ class Page(Page):
         ('image', ImageChooserBlock() ),
     ])
 
-    content_panels = Page.content_panels + [
+    content_panels = [
         StreamFieldPanel('body')
     ]
